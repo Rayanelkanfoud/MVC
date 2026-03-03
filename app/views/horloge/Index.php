@@ -24,7 +24,6 @@
                     <tr>
                         <th>Merk</th>
                         <th>Model</th>
-                        <th>Type</th>
                         <th>Prijs</th>
                         <th>Materiaal</th>
                         <th>Gewicht</th>
@@ -33,17 +32,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($data['result'] as $sneaker) : ?>
+                    <?php foreach ($data['result'] as $horloge) : ?>
                         <tr>
-                            <td><?php echo $sneaker->Merk; ?></td>
-                            <td><?php echo $sneaker->Model; ?></td>
-                            <td><?php echo $sneaker->Type; ?></td>
-                            <td><?php echo $sneaker->Prijs; ?></td>
-                            <td><?php echo $sneaker->Materiaal; ?></td>
-                            <td><?php echo $sneaker->Gewicht; ?></td>
-                            <td><?php echo $sneaker->Releasedatum; ?></td>
+                            <td><?php echo $horloge->Merk; ?></td>
+                            <td><?php echo $horloge->Model; ?></td>
+                            <td><?php echo $horloge->Prijs; ?></td>
+                            <td><?php echo $horloge->Materiaal; ?></td>
+                            <td><?php echo $horloge->Gewicht; ?></td>
+                            <td><?php echo $horloge->Releasedatum; ?></td>
                             <td class="text-center">
-                                <a href="<?php echo URLROOT; ?>/sneakerController/delete/<?php echo $sneaker->Id; ?>"
+                                <a href="<?php echo URLROOT; ?>/horlogeController/delete/<?php echo $horloge->Id; ?>"
                                    onclick="return confirm('Weet je zeker dat je dit record wilt verwijderen?');">
                                     <i class="bi bi-trash3-fill text-danger"></i>
                                 </a>

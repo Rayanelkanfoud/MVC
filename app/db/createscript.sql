@@ -156,3 +156,40 @@ VALUES
 -- Checks (controle)
 SELECT * FROM Smartphones;
 SELECT * FROM Sneakers;
+
+-- Step: 06
+-- ************************************************************
+-- Doel : Vul de tabel Horloges met gegevens
+-- ************************************************************
+--
+-- Versie   Datum       Auteur            Omschrijving
+-- 01       10-02-2026  Arjan de Ruijter  Horloges
+--
+-- ************************************************************
+
+CREATE TABLE Horloges
+(
+    Id               SMALLINT        UNSIGNED    NOT NULL    AUTO_INCREMENT,
+    Merk             VARCHAR(50)                 NOT NULL,
+    Model            VARCHAR(50)                 NOT NULL,
+    Prijs            DECIMAL(6,2)                NOT NULL,
+    Materiaal        VARCHAR(25)                 NOT NULL,
+    Gewicht          DECIMAL(6,2)                NOT NULL,
+    Releasedatum     DATE                        NOT NULL,
+    IsActief         BIT                         NOT NULL    DEFAULT 1,
+    Opmerking        VARCHAR(255)                            DEFAULT NULL,
+    DatumAangemaakt  DATETIME(6)                 NOT NULL    DEFAULT NOW(6),
+    DatumGewijzigd   DATETIME(6)                 NOT NULL    DEFAULT NOW(6),
+    CONSTRAINT PK_Horloges_Id PRIMARY KEY (Id)
+) ENGINE=InnoDB;
+
+INSERT INTO Horloges
+(
+    Merk, Model, Prijs, Materiaal, Gewicht, Releasedatum
+)
+VALUES
+('Apple',   'Watch Series 9',      449.00, 'Aluminium', 38.50,  '2023-09-22'),
+('Samsung', 'Galaxy Watch 6',      329.00, 'Aluminium', 33.00,  '2023-08-11'),
+('Garmin',  'Forerunner 965',      599.00, 'Kunststof', 52.00,  '2023-03-01'),
+('Casio',   'G-Shock GA-2100',     119.00, 'Resin',     51.00,  '2021-06-01'),
+('Seiko',   '5 Sports SRPD55',     299.00, 'Staal',     105.00, '2020-01-15');

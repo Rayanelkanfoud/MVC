@@ -11,7 +11,8 @@ class Sneaker
 
     public function getAllSneakers()
     {
-        $sql = "SELECT  SNK.Merk
+        $sql = "SELECT  SNK.Id
+                        ,SNK.Merk
                         ,SNK.Model
                         ,SNK.Type
                         ,SNK.Prijs
@@ -26,5 +27,17 @@ class Sneaker
         $this->db->query($sql);
 
         return $this->db->resultSet();
+    }
+
+    public function delete($Id)
+    {
+        $sql = "DELETE
+                FROM Sneakers
+                WHERE Id = :Id";
+
+        $this->db->query($sql);
+        $this->db->bind(':Id', $Id, PDO::PARAM_INT);
+
+        return $this->db->execute();
     }
 }
