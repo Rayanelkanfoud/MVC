@@ -14,10 +14,10 @@ class SmartphoneController extends BaseController
         $result = $this->smartphoneModel->getAllSmartphones();
 
         $data = [
-            'title'   => 'Overzicht Smartphones',
+            'title' => 'Overzicht Smartphones',
             'display' => $display,
             'message' => $message,
-            'result'  => $result
+            'result' => $result
         ];
 
         $this->view('smartphone/index', $data);

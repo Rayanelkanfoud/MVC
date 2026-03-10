@@ -8,10 +8,9 @@
         </div>
     </div>
 
-    <!-- Terugkoppeling -->
     <div class="row mt-3 d-flex justify-content-center" style="display: <?php echo $data['display']; ?>;">
         <div class="col-10">
-            <div class="alert alert-success">
+            <div class="alert alert-success" role="alert">
                 <?php echo $data['message']; ?>
             </div>
         </div>

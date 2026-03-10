@@ -8,11 +8,19 @@
         </div>
     </div>
 
-    <div class="row mt-3 d-flex justify-content-center" style="display: <?php echo $data['display']; ?>;">
-        <div class="col-10">
+    <div class="row mt-3 d-<?php echo $data['display']; ?> justify-content-center">
+        <div class="col-10 text-begin text-primary">
             <div class="alert alert-success" role="alert">
                 <?php echo $data['message']; ?>
             </div>
+        </div>
+    </div>
+
+    <div class="row mt-3 d-flex justify-content-center">
+        <div class="col-10 text-begin text-danger">
+            <a href="<?php echo URLROOT; ?>/HorlogeController/create"
+               class="btn btn-warning"
+               role="button">Nieuw horloge</a>
         </div>
     </div>
 
@@ -41,7 +49,7 @@
                             <td><?php echo $horloge->Gewicht; ?></td>
                             <td><?php echo $horloge->Releasedatum; ?></td>
                             <td class="text-center">
-                                <a href="<?php echo URLROOT; ?>/horlogeController/delete/<?php echo $horloge->Id; ?>"
+                                <a href="<?php echo URLROOT; ?>/HorlogeController/delete/<?php echo $horloge->Id; ?>"
                                    onclick="return confirm('Weet je zeker dat je dit record wilt verwijderen?');">
                                     <i class="bi bi-trash3-fill text-danger"></i>
                                 </a>
@@ -51,9 +59,7 @@
                 </tbody>
             </table>
 
-            <a href="<?php echo URLROOT; ?>/homepages/index" class="btn btn-primary">
-                Terug
-            </a>
+            <a href="<?php echo URLROOT; ?>/homepages/index"><i class="bi bi-arrow-left"></i></a>
 
         </div>
     </div>
