@@ -18,7 +18,7 @@
 
     <div class="row mt-3 d-flex justify-content-center">
         <div class="col-10 text-begin text-danger">
-            <a href="<?php echo URLROOT; ?>/HorlogeController/create"
+            <a href="<?= URLROOT; ?>/HorlogeController/create"
                class="btn btn-warning"
                role="button">Nieuw horloge</a>
         </div>
@@ -26,7 +26,6 @@
 
     <div class="row mt-3 d-flex justify-content-center">
         <div class="col-10">
-
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -36,20 +35,26 @@
                         <th>Materiaal</th>
                         <th>Gewicht</th>
                         <th>Releasedatum</th>
+                        <th>Wijzig</th>
                         <th>Verwijder</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($data['result'] as $horloge) : ?>
+                    <?php foreach($data['result'] as $horloge) : ?>
                         <tr>
-                            <td><?php echo $horloge->Merk; ?></td>
-                            <td><?php echo $horloge->Model; ?></td>
-                            <td><?php echo $horloge->Prijs; ?></td>
-                            <td><?php echo $horloge->Materiaal; ?></td>
-                            <td><?php echo $horloge->Gewicht; ?></td>
-                            <td><?php echo $horloge->Releasedatum; ?></td>
+                            <td><?= $horloge->Merk; ?></td>
+                            <td><?= $horloge->Model; ?></td>
+                            <td><?= $horloge->Prijs; ?></td>
+                            <td><?= $horloge->Materiaal; ?></td>
+                            <td><?= $horloge->Gewicht; ?></td>
+                            <td><?= $horloge->Releasedatum; ?></td>
                             <td class="text-center">
-                                <a href="<?php echo URLROOT; ?>/HorlogeController/delete/<?php echo $horloge->Id; ?>"
+                                <a href="<?= URLROOT; ?>/HorlogeController/update/<?= $horloge->Id; ?>">
+                                    <i class="bi bi-pencil-fill text-success"></i>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="<?= URLROOT; ?>/HorlogeController/delete/<?= $horloge->Id; ?>"
                                    onclick="return confirm('Weet je zeker dat je dit record wilt verwijderen?');">
                                     <i class="bi bi-trash3-fill text-danger"></i>
                                 </a>
@@ -59,8 +64,7 @@
                 </tbody>
             </table>
 
-            <a href="<?php echo URLROOT; ?>/homepages/index"><i class="bi bi-arrow-left"></i></a>
-
+            <a href="<?= URLROOT; ?>/homepages/index"><i class="bi bi-arrow-left"></i></a>
         </div>
     </div>
 

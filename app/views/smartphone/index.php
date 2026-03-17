@@ -8,11 +8,19 @@
         </div>
     </div>
 
-    <div class="row mt-3 d-flex justify-content-center" style="display: <?php echo $data['display']; ?>;">
-        <div class="col-10">
+    <div class="row mt-3 d-<?php echo $data['display']; ?> justify-content-center">
+        <div class="col-10 text-begin text-primary">
             <div class="alert alert-success" role="alert">
                 <?php echo $data['message']; ?>
             </div>
+        </div>
+    </div>
+
+    <div class="row mt-3 d-flex justify-content-center">
+        <div class="col-10 text-begin text-danger">
+            <a href="<?= URLROOT; ?>/SmartphoneController/create"
+               class="btn btn-warning"
+               role="button">Nieuwe smartphone</a>
         </div>
     </div>
 
@@ -30,22 +38,28 @@
                         <th>Schermgrootte</th>
                         <th>Releasedatum</th>
                         <th>MegaPixels</th>
+                        <th>Wijzig</th>
                         <th>Verwijder</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($data['result'] as $smartphone) : ?>
+                    <?php foreach($data['result'] as $smartphone) : ?>
                         <tr>
-                            <td><?php echo $smartphone->Merk; ?></td>
-                            <td><?php echo $smartphone->Model; ?></td>
-                            <td><?php echo $smartphone->Prijs; ?></td>
-                            <td><?php echo $smartphone->Geheugen; ?></td>
-                            <td><?php echo $smartphone->Besturingssysteem; ?></td>
-                            <td><?php echo $smartphone->Schermgrootte; ?></td>
-                            <td><?php echo $smartphone->Releasedatum; ?></td>
-                            <td><?php echo $smartphone->MegaPixels; ?></td>
+                            <td><?= $smartphone->Merk; ?></td>
+                            <td><?= $smartphone->Model; ?></td>
+                            <td><?= $smartphone->Prijs; ?></td>
+                            <td><?= $smartphone->Geheugen; ?></td>
+                            <td><?= $smartphone->Besturingssysteem; ?></td>
+                            <td><?= $smartphone->Schermgrootte; ?></td>
+                            <td><?= $smartphone->Releasedatum; ?></td>
+                            <td><?= $smartphone->MegaPixels; ?></td>
                             <td class="text-center">
-                                <a href="<?php echo URLROOT; ?>/smartphoneController/delete/<?php echo $smartphone->Id; ?>"
+                                <a href="<?= URLROOT; ?>/SmartphoneController/update/<?= $smartphone->Id; ?>">
+                                    <i class="bi bi-pencil-fill text-success"></i>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="<?= URLROOT; ?>/SmartphoneController/delete/<?= $smartphone->Id; ?>"
                                    onclick="return confirm('Weet je zeker dat je dit record wilt verwijderen?');">
                                     <i class="bi bi-trash3-fill text-danger"></i>
                                 </a>
@@ -55,9 +69,7 @@
                 </tbody>
             </table>
 
-            <a href="<?php echo URLROOT; ?>/homepages/index" class="btn btn-primary">
-                Terug
-            </a>
+            <a href="<?= URLROOT; ?>/homepages/index"><i class="bi bi-arrow-left"></i></a>
 
         </div>
     </div>
