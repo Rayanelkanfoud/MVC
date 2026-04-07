@@ -193,3 +193,47 @@ VALUES
 ('Garmin',  'Forerunner 965',      599.00, 'Kunststof', 52.00,  '2023-03-01'),
 ('Casio',   'G-Shock GA-2100',     119.00, 'Resin',     51.00,  '2021-06-01'),
 ('Seiko',   '5 Sports SRPD55',     299.00, 'Staal',     105.00, '2020-01-15');
+
+
+
+-- Step: 07
+-- ************************************************************
+-- Doel : Maak een nieuwe tabel aan met de naam Zangeressen
+-- ************************************************************
+--
+-- Versie   Datum       Auteur            Omschrijving
+-- 01       07-04-2026  Rayanelkanfoud     Zangeressen
+--
+-- ************************************************************
+
+CREATE TABLE Zangeressen
+(
+    Id               SMALLINT        UNSIGNED    NOT NULL    AUTO_INCREMENT,
+    Naam             VARCHAR(50)                 NOT NULL,
+    Geboorteland     VARCHAR(50)                 NOT NULL,
+    Vermogen         DECIMAL(10,2)               NOT NULL,
+    Genre            VARCHAR(25)                 NOT NULL,
+    Geboortedatum    DATE                        NOT NULL,
+    IsActief         BIT                         NOT NULL    DEFAULT 1,
+    Opmerking        VARCHAR(255)                            DEFAULT NULL,
+    DatumAangemaakt  DATETIME(6)                 NOT NULL    DEFAULT NOW(6),
+    DatumGewijzigd   DATETIME(6)                 NOT NULL    DEFAULT NOW(6),
+    CONSTRAINT PK_Zangeressen_Id PRIMARY KEY (Id)
+) ENGINE=InnoDB;
+
+INSERT INTO Zangeressen
+(
+    Naam,
+    Geboorteland,
+    Vermogen,
+    Genre,
+    Geboortedatum
+)
+VALUES
+('Rihanna',        'Barbados',       1400.00, 'R&B',        '1988-02-20'),
+('Taylor Swift',   'Verenigde Staten', 1100.00, 'Pop',      '1989-12-13'),
+('Beyoncé',        'Verenigde Staten',  540.00, 'R&B',      '1981-09-04'),
+('Madonna',        'Verenigde Staten',  850.00, 'Pop',      '1958-08-16'),
+('Adele',          'Engeland',          220.00, 'Pop',      '1988-05-05');
+
+SELECT * FROM Zangeressen;

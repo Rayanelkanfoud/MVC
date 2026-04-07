@@ -1,0 +1,64 @@
+/* MVC Basics - Custom Styles */
+
+/* Sticky footer with flexbox */
+html { min-height: 100%; }
+
+/* Body padding voor fixed navbar */
+body {
+    padding-top: 70px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Wrapper voor sticky footer */
+.wrapper { flex: 1 0 auto; }
+
+/* Custom navbar kleur (teal) */
+.custom-navbar {
+    background-color: #0d6e6e;
+}
+
+/* Navbar brand */
+.navbar-brand { font-weight: bold; }
+.navbar-brand i { font-size: 1.5rem; }
+
+/* Footer styling */
+.custom-footer {
+    background-color: #0d6e6e;
+    flex-shrink: 0;
+    border-top: 1px solid #0a5252;
+}
+
+/* Table styling */
+.table th { background-color: #d4f0f0; }
+
+/* Form styling */
+.form-label { font-weight: 500; }
+
+/* Button spacing */
+.btn { margin-right: 5px; }
+
+/* Alert styling */
+.alert { margin-bottom: 0; }
+
+/* Link styling in homepage */
+.homepage-links a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.homepage-links a:hover { text-decoration: underline; }
+
+/* Nieuwe knop kleur */
+.btn-nieuw {
+    background-color: #17a2b8;
+    color: #fff;
+    border-color: #17a2b8;
+}
+
+.btn-nieuw:hover {
+    background-color: #138496;
+    color: #fff;
+    border-color: #117a8b;
+}
